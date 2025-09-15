@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Informasi Token Sulingjar</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        label, input, button { display: block; width: 100%; margin-bottom: 15px; }
+        #result { background: #f9f9f9; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Token Sulingjar SMPN 3 Sleman</h2>
+        <form id="nikForm">
+            <label for="nik">Masukkan NIK:</label>
+            <input type="text" id="nik" name="nik" required>
+            <button type="submit">Dapatkan Informasi</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        // Contoh data, ganti dengan data asli jika diperlukan
+        const data = {
+                    "3404136506670001": {
+            	token: "4C7F962CDF",
+             	info: "Akun Sulingjar a.n. Kristyowati dengan NIK 3404136506670001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+     	},
+        "3404125304830006": {
+        	token: "4C7F962CDF",
+          	info: "Akun Sulingjar a.n. Indri Prilastri dengan NIK 3404125304830006, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+       	},
+       	"3305205201980002": {
+             	token: "4C7F962CDF",
+             	info: "Akun Sulingjar a.n. Hapsari Eka Wijayanti dengan NIK 3305205201980002, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+       	},
+        "3404165512650001": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Yayuk Mujirahayu dengan NIK 3404165512650001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404140902900003": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Fajar Nurhayatiningsih dengan NIK 3404140902900003, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404125710810001": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Yohana Kiki Ratna Wati dengan NIK 3404125710810001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404131101950002": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Nico Damar Djanu dengan NIK 3404131101950002, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+		"3471074106950002": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Nur Afi Yuniar Prafitasari dengan NIK 3471074106950002, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"},
+	"3404135412680003": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Supi Iswari dengan NIK 3404135412680003, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404056203930001": {	
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. RIZKI KUSCAHYANI dengan NIK 3404056203930001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"	
+	},
+	"3308015003900002": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Dyah Ayu Ratnaningrum dengan NIK 3308015003900002, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3323185807860001": {	
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Leny Nurjanah dengan NIK 3323185807860001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"	
+	},
+	"3404135205680005": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Jojoh Juhariah dengan NIK 3404135205680005, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"	
+	},
+	"3404134809940005": {	
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Ratna Nur Azizah dengan NIK 3404134809940005, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404065302640001": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Chrispina Sri Harmini dengan NIK 3404065302640001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404055509910002": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Tina Listiyani dengan NIK 3404055509910002, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404131006840003": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. FILIPUS WARIDI dengan NIK 3404131006840003, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404134202660001": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Isti Sukaryani dengan NIK 3404134202660001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404134401810006": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Warikurniasih Rejeki dengan NIK 3404134401810006, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"	
+	},
+	"3404135711750002": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Eni Kisdaryati dengan NIK 3404135711750002, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3471085611930002": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Putri Novitasari dengan NIK 3471085611930002, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"},
+	"3404141603990001": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Muhammad Alwani Rosid Yudianto dengan NIK 3404141603990001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"	
+	},
+	"3319076006890001": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Alfiah Satriana dengan NIK 3319076006890001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404175207810001": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Isti Fajariyah dengan NIK 3404175207810001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"	
+	},
+	"3308040902800001": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Agung Prasetiya dengan NIK 3308040902800001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3305013006950004": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Hasto Rustiadi dengan NIK 3305013006950004, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404121807770003": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Ristohadi S dengan NIK 3404121807770003, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404062205670001": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Marko Yusnandar dengan NIK 3404062205670001, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3471125507670002": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Sugiyartidengan NIK 3471125507670002, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3403137005920009": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Intan Setyawati dengan NIK 3403137005920009, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3401101004910002": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Arif Budianto dengan NIK 3401101004910002, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404060410920002": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. Danu Mukti dengan NIK 3404060410920002, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3314105405920005": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. ELSA AFIFAH LUSIANA DEWI dengan NIK 3314105405920005, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+	"3404076202930003": {
+		token: "4C7F962CDF",
+		info: "Akun Sulingjar a.n. MUFTIQUL DYAS PRIMASTI dengan NIK 3404076202930003, lanjut mengisi survei melalui surveilingkunganbelajar.kemdikbud.go.id"
+	},
+            "1234567890123456": {
+                token: "sulingjar-abc123",
+                info: "Akun Sulingjar untuk NIK 1234567890123456"
+            },
+            "9876543210987654": {
+                token: "sulingjar-def456",
+                info: "Akun Sulingjar untuk NIK 9876543210987654"
+            }
+        };
+
+        document.getElementById('nikForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nik = document.getElementById('nik').value.trim();
+            const resultDiv = document.getElementById('result');
+            if (data[nik]) {
+                resultDiv.innerHTML = `
+                    <strong>Token:</strong> ${data[nik].token}<br>
+                    <strong>Informasi:</strong> ${data[nik].info}
+                `;
+            } else {
+                resultDiv.innerHTML = "NIK tidak ditemukan atau belum terdaftar.";
+            }
+        });
+    </script>
+</body>
+</html>
